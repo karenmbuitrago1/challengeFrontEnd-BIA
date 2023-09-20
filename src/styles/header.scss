@@ -1,0 +1,36 @@
+// Estilos header
+.header {
+  background-color: white;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.header__darkmode-button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    color: $LightModeInput;
+  }
+}
+.header__darkmode-text {
+  margin-left: 8px;
+  font-weight: 600;
+}
+.material-symbols-outlined{
+  font-size: 1.4rem !important;
+}
