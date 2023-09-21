@@ -1,17 +1,10 @@
-import { Nunito_Sans } from 'next/font/google'
-import Header from '@/components/Header'
-import FlagsDashboard from '@/components/Dashboard'
-
-const inter = Nunito_Sans({ subsets: ['latin'] })
+import Layout from '../components/Layout';
+import FlagsDashboard from '../components/Dashboard';
 
 export default function Home() {
   return (
-    <>
-    <Header/>
-    <main className={inter.className} >
+    <Layout>
       <FlagsDashboard />
-    </main>
-    </>
-    
-  )
+    </Layout>
+  );
 }

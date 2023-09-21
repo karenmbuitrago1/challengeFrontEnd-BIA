@@ -1,0 +1,43 @@
+.back {
+	width: 8%;
+	background-color: $white;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	height: 6vh;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	border: transparent;
+	cursor: pointer;
+}
+.country {
+	padding-top: 2%;
+}
+.description__title {
+	padding: 16px 0;
+	margin: 16px 0;
+	font-weight: 800;
+}
+.country__detail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 4%;
+}
+.country__detail-flag {
+	width: 40%;
+}
+.country__detail-text {
+	width: 50%;
+}
+.country__detail-description {
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+}
+.country__flag-img {
+	width: 100%;
+}
+.description__elements p {
+	padding: 8px 0;
+}

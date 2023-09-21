@@ -3,10 +3,6 @@ import { useState } from "react";
 const CountrySearch = ({ onSearch }) => {
 	const [searchCountry, setSearchCountry] = useState("");
 
-	const handleSearch = () => {
-		onSearch(searchCountry)
-	}
-
 	const handleChange = (e) => {
 		const { value } = e.target;
 		setSearchCountry(value)
