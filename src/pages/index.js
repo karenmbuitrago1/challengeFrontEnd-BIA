@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../layouts/MainLayout';
 import FlagsDashboard from '../components/Dashboard';
 
 export default function Home() {

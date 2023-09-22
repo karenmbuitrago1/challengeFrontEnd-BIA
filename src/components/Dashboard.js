@@ -4,18 +4,15 @@ import { getAllCountries } from "../lib/api";
 import CountrySearch from "./CountrySearch";
 import RegionFilter from "./RegionFilter";
 
-
 const FlagsDashboard = () => {
   const [countries, setCountries] = useState([]);
-  const [searchCountry, setSearchCountry] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
-  const [filteredCountries, setFilteredCountries] = useState([]);
 
   useEffect(() => {
     getAllCountries()
       .then((data) => {
         setCountries(data);
-        setFilteredCountries(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -24,23 +21,23 @@ const FlagsDashboard = () => {
 
   // Función para manejar la búsqueda
   const handleSearch = (searchTerm) => {
-    const filtered = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredCountries(filtered);
-    setSearchCountry(searchCountry);
+    setSearchTerm(searchTerm); // Actualiza el término de búsqueda
   };
 
   // Función para manejar la selección de la región
   const handleSelectRegion = (region) => {
-    setSelectedRegion(region);
-    if (region === "") {
-      setFilteredCountries(countries);
-    } else {
-      const filteredByRegion = countries.filter((country) => country.region === region);
-      setFilteredCountries(filteredByRegion);
-    }
+    setSelectedRegion(region); // Actualiza la región seleccionada
   };
+
+  // Combina los filtros de búsqueda y región
+  const filteredCountriesByRegion = selectedRegion
+    ? countries.filter((country) => country.region === selectedRegion)
+    : countries;
+
+  // Aplica el filtro de búsqueda
+  const filteredCountriesSearch = filteredCountriesByRegion.filter((country) =>
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="flags">
@@ -52,7 +49,7 @@ const FlagsDashboard = () => {
         />
       </div>
       <ul className="flags__dashboard">
-        {filteredCountries.map((country, index) => (
+        {filteredCountriesSearch.map((country, index) => (
           <li className="flags__country" key={index}>
             <Link href={`/countries/${country.name.common}`}>
               <div className="country__article">

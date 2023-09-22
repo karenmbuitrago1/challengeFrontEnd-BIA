@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import Layout from './Layout';
 import { useRouter } from 'next/router';
+import Layout from '@/layouts/MainLayout';
 
 const CountryDetail = ({ country }) => {
-
 	const router = useRouter();
-	const handleBackButtonClick  = ( )=>{
+	const handleBackButtonClick = () => {
 		router.push('/');
 	};
 
@@ -15,9 +14,9 @@ const CountryDetail = ({ country }) => {
 	return (
 		<Layout>
 			<div className="country">
-				<button 
-				className="back"
-				onClick={handleBackButtonClick}>
+				<button
+					className="back"
+					onClick={handleBackButtonClick}>
 					<span className="material-symbols-outlined">arrow_back</span>
 					<p>Back</p>
 				</button>

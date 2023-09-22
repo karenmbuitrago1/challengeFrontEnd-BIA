@@ -1,11 +1,17 @@
 // Estilos header
 .header {
-  background-color: white;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 .header__nav {
   display: flex;
@@ -32,6 +38,8 @@
   margin-left: 8px;
   font-weight: 600;
 }
-.material-symbols-outlined{
+.material-symbols-outlined {
   font-size: 1.4rem !important;
 }
+
+

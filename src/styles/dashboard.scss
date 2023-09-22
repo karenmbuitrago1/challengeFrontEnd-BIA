@@ -90,3 +90,38 @@
     list-style: none;
     padding: 8px 0;
 }
+
+.article__text p{
+    padding: 10px;
+}
+
+
+// Estilos Modo Oscuro
+.dark-mode {
+    color: $LightGrayBackground;
+    main{
+        background-color: $DarkBlueBackground;
+    }
+    .header{
+        background-color: $DarkBlueElements;
+    }
+    .header__darkmode-text{
+        color: $LightGrayBackground;
+    }
+    .material-symbols-outlined{
+        color: $LightGrayBackground;
+    }
+    .flags__country {
+        background-color: $DarkBlueElements;
+    }
+    .flags__search--container{
+        background-color: $DarkBlueElements;
+    }
+    .flags__search-input{
+        background-color: $DarkBlueElements;
+    }
+    .flags__region--filter{
+        background-color: $DarkBlueElements;
+        color: $LightGrayBackground;
+    }
+}
