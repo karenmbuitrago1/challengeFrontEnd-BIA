@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@/layouts/MainLayout';
 
@@ -13,7 +12,7 @@ const CountryDetail = ({ country }) => {
 	const nativeNameText = nativeName ? nativeName.common : '';
 	const languagesArray = country.languages ? Object.values(country.languages) : [];
 	const bordersArray = country.borders ? Object.values(country.borders) : [];
-	const currencies = Object.keys(country.currencies)[0];
+	const currencies = country.currencies[0] ? Object.keys(country.currencies)[0]: [];
 
 	return (
 		<Layout>

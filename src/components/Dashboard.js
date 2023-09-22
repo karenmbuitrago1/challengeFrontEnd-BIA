@@ -40,7 +40,7 @@ const FlagsDashboard = () => {
   );
 
   return (
-    <div className="flags">
+    <div className="flags" data-testid="dashboard" >
       <div className="flag__filters">
         <CountrySearch onSearch={handleSearch} />
         <RegionFilter
@@ -48,7 +48,7 @@ const FlagsDashboard = () => {
           onSelectRegion={handleSelectRegion} // Pasa la función de manejo de selección de región
         />
       </div>
-      <ul className="flags__dashboard ">
+      <ul className="flags__dashboard" data-testid="country-list">
         {filteredCountriesSearch.map((country, index) => (
           <li className="flags__country" key={index}>
             <Link href={`/countries/${country.name.common}`}>
