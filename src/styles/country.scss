@@ -1,5 +1,5 @@
+// Estilos para el detalle del pais
 .back {
-	width: 8%;
 	background-color: $white;
 	border-radius: 6px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -10,8 +10,12 @@
 	border: transparent;
 	cursor: pointer;
 }
+.back p{
+	padding: 0 8px;
+}
 .country {
 	padding-top: 2%;
+	font-size: 16px;
 }
 .description__title {
 	padding: 16px 0;
@@ -40,4 +44,40 @@
 }
 .description__elements p {
 	padding: 8px 0;
+}
+
+// Estilos Modo oscuro
+
+.dark-mode {
+    .back {
+		color: $white;
+        background-color: $DarkBlueElements;
+    }
+}
+
+
+// Responsive
+@media (max-width: 768px) {
+	.country {
+		padding: 6% 2%;
+	}
+	.country__detail {
+		flex-direction: column;
+		padding-top: 4%;
+	}
+	.country__detail-flag {
+		width: 100%;
+	}
+	.country__detail-text {
+		width: 100%;
+	}
+	.country__detail-description {
+		flex-direction: column;
+	}
+	.description__title {
+		padding: 8px 0 0;
+	}
+	.description__elements{
+		padding: 16px 0;
+	}
 }

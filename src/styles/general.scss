@@ -18,19 +18,20 @@ a {
     text-decoration: none;
 }
 main {
-    margin-top: 3%;
-    padding: 3% 5%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 6% 5%;
     background-color: $LightGrayBackground;
 }
 
 @media (max-width: 1024px) {
     main {
-        margin-top: 10%;
+        padding: 10% 5%;
     }
 }
 
 @media (max-width: 768px) {
     main {
-        margin-top: 12%;
+        padding: 16% 5%;
     }
 }
