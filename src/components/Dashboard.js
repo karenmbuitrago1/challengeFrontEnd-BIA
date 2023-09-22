@@ -48,7 +48,7 @@ const FlagsDashboard = () => {
           onSelectRegion={handleSelectRegion} // Pasa la función de manejo de selección de región
         />
       </div>
-      <ul className="flags__dashboard">
+      <ul className="flags__dashboard ">
         {filteredCountriesSearch.map((country, index) => (
           <li className="flags__country" key={index}>
             <Link href={`/countries/${country.name.common}`}>

@@ -1,40 +1,74 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Karen Milena Buitrago López
+Bogotá, Colombia
+karenmbuitrago@gmail.com
+
+
 ## Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where in the world Project
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Este proyecto es una aplicación web construida con Next.js y React que muestra información sobre países a partir de una API externa y permite a los usuarios explorar los detalles de cada país.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Arquitectura de la Aplicación
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+La aplicación sigue una arquitectura de componentes, con los siguientes elementos clave:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Components**: Contiene los componentes React reutilizables, como `CountryDetail`, `Dashboard`, y `Header`.
+- **Context**: Incluye el contexto de la aplicación para manejar el tema de vista oscura.
+- **Layouts**: Define el diseño general de la aplicación, con un `MainLayout` para páginas comunes.
+- **Lib**: Contiene un módulo `api.js` que se utiliza para interactuar con la API de países.
+- **Pages**: Las páginas de Next.js que representan las vistas de la aplicación, incluyendo `countries/[country].js`.
+- **Styles**: Contiene archivos Sass para gestionar los estilos de la aplicación.
 
-## Learn More
+## Uso de la API
 
-To learn more about Next.js, take a look at the following resources:
+He utilizado Axios para realizar peticiones HTTP a la API de países.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+const api = axios.create({
+  baseURL: "https://restcountries.com/v3.1/",
+});
+```
 
-## Deploy on Vercel
+## Funcionalidades Principales
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Búsqueda de países por nombre.
+- Filtrado de países por región.
+- Visualización de detalles de cada país al hacer clic en su enlace.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Instrucciones para Ejecutar
+
+1. Clona este repositorio en tu máquina local:
+
+https://github.com/karenmbuitrago1/challengeFrontEnd-BIA
+
+2. Instala las dependencias:
+
+```
+npm install
+```
+
+3. Inicia la aplicación:
+
+
+```
+npm run dev
+```
+
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+
+
+## Autores / créditos
+* **Karen Buitrago** - *Prueba técnica para Bia*
+
+
