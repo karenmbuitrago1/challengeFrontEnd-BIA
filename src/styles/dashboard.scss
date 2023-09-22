@@ -1,14 +1,18 @@
-.flag__filters{
+.flags {
+    font-size: 14px;
+}
+
+.flag__filters {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 // Estilos para el filtro por region
-.flags__region{
+.flags__region {
     padding: 0 8px;
 }
-.flags__region--filter{
+.flags__region--filter {
     background-color: hsl(0, 0%, 100%);
     width: 100%;
     border-radius: 6px;
@@ -42,31 +46,33 @@
 }
 
 .flags__search-input {
-    border: none; 
-    padding: 0 16px; 
+    border: none;
+    padding: 0 16px;
     width: 100%;
     height: 100%;
 }
 
-// // Estilos para la lista de paises
-// .flags__dashboard {
-//     width: 100%;
-//     padding-top: 2%;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-//     list-style: none;
-// }
-// .flags__country {
-//     width: 20%;
-//     margin: 8px;
-//     border-radius: 6px;
-//     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-//     transform-origin: center;
-//     transition: all 0.4s ease-in-out;
-//     background-color: $white;
-//     overflow: hidden;
-// }
+// Estilos para la lista de paises
+.flags__dashboard {
+    // width: 100%;
+    padding-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+.flags__country {
+    width: calc(22% - 8px);
+    margin: 8px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    background-color: $white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 .country__article--figure {
     margin: 0;
     padding: 0;
@@ -74,6 +80,8 @@
 
 .country__article-img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     transform-origin: center;
     transition: transform 0.4s ease-in-out;
 }
@@ -81,9 +89,8 @@
     font-weight: 800;
 }
 .article__body {
-    padding: 8px;
-    margin: 8px;
-    font-size: 14px;
+    padding: 16px;
+    margin: 8px 16px;
 }
 
 .article__text {
@@ -91,37 +98,56 @@
     padding: 8px 0;
 }
 
-.article__text p{
+.article__text p {
     padding: 3px 0;
 }
-
 
 // Estilos Modo Oscuro
 .dark-mode {
     color: $LightGrayBackground;
-    main{
+    main {
         background-color: $DarkBlueBackground;
     }
-    .header{
+    .header {
         background-color: $DarkBlueElements;
     }
-    .header__darkmode-text{
+    .header__darkmode-text {
         color: $LightGrayBackground;
     }
-    .material-symbols-outlined{
+    .material-symbols-outlined {
         color: $LightGrayBackground;
     }
     .flags__country {
         background-color: $DarkBlueElements;
     }
-    .flags__search--container{
+    .flags__search--container {
         background-color: $DarkBlueElements;
     }
-    .flags__search-input{
+    .flags__search-input {
         background-color: $DarkBlueElements;
     }
-    .flags__region--filter{
+    .flags__region--filter {
         background-color: $DarkBlueElements;
         color: $LightGrayBackground;
+    }
+}
+
+@media (max-width: 1024px) {
+    .flags__country {
+        width: calc(33.33% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    .flags__country {
+        width: calc(100% - 8px);
+    }
+    .flag__filters {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .flags__search {
+        margin: 8px;
+        width: 95%;
     }
 }

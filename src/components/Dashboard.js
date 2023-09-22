@@ -57,7 +57,7 @@ const FlagsDashboard = () => {
                   <img
                     className="country__article-img"
                     src={country.flags.svg}
-                    alt=""
+                    alt={country.name.common}
                   />
                 </figure>
                 <div className="country__article__body article__body">
