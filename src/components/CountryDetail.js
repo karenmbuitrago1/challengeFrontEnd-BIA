@@ -8,8 +8,12 @@ const CountryDetail = ({ country }) => {
 		router.push('/');
 	};
 
-	const languagesArray = Object.values(country.languages);
-	const bordersArray = Object.values(country.borders);
+	const nativeLanguageCode = Object.keys(country.languages)[0];
+	const nativeName = country.name.nativeName[nativeLanguageCode];
+	const nativeNameText = nativeName ? nativeName.common : '';
+	const languagesArray = country.languages ? Object.values(country.languages) : [];
+	const bordersArray = country.borders ? Object.values(country.borders) : [];
+	const currencies = Object.keys(country.currencies)[0];
 
 	return (
 		<Layout>
@@ -34,6 +38,7 @@ const CountryDetail = ({ country }) => {
 						<h1 className="description__title">{country.name.common}</h1>
 						<div className="country__detail-description">
 							<div className="description__elements">
+								<p><strong>Native Name: </strong>{nativeNameText}</p>
 								<p><strong>Population: </strong>{country.population}</p>
 								<p><strong>Region: </strong>{country.region}</p>
 								<p><strong>Sub-Region: </strong>{country.subregion}</p>
@@ -41,12 +46,17 @@ const CountryDetail = ({ country }) => {
 							</div>
 							<div className="description__elements">
 								<p><strong>Top Level Domain: </strong>{country.tld}</p>
-								<p><strong>Currencies: </strong>{country.tld}</p>
+								<p><strong>Currencies: </strong>{currencies}</p>
 								<p><strong>Languages: </strong> {languagesArray.join(', ')}</p>
 							</div>
 						</div>
 						<div className="description__borders">
-							<p><strong>Border Countries:</strong> {bordersArray.join(', ')}</p>
+							<strong>Border Countries: </strong>
+							{bordersArray.map((border, index) => (
+								<button key={index} className="border-button">
+									{border}
+								</button>
+							))}
 						</div>
 					</div>
 				</div>

@@ -58,6 +58,7 @@ const FlagsDashboard = () => {
                     className="country__article-img"
                     src={country.flags.svg}
                     alt={country.name.common}
+                    loading="lazy"
                   />
                 </figure>
                 <div className="country__article__body article__body">
